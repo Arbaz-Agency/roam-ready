@@ -25,7 +25,7 @@ const Loading = () => <div className="min-h-[70vh] bg-ivory" aria-hidden="true" 
 
 const page = (element: React.ReactNode) => <Suspense fallback={<Loading />}>{element}</Suspense>
 
-const router = createBrowserRouter([
+const routes = [
   {
     element: <Layout />,
     children: [
@@ -41,7 +41,12 @@ const router = createBrowserRouter([
       { path: '*', element: <NotFoundBody /> },
     ],
   },
-])
+]
+
+// import.meta.env.BASE_URL mirrors Vite's `base` config automatically, so the
+// router only knows about the /roam-ready/ subpath on the GitHub Pages build
+// (see vite.config.ts) and stays at '/' everywhere else — no duplication.
+const router = createBrowserRouter(routes, { basename: import.meta.env.BASE_URL })
 
 export default function App() {
   return <RouterProvider router={router} />

@@ -1,6 +1,28 @@
 <!doctype html>
 <html lang="en">
   <head>
+    <!--
+      Counterpart to public/404.html's redirect: on GitHub Pages, a deep link
+      that 404'd gets bounced here with the real path folded into the query
+      string. This restores the actual URL via history.replaceState before
+      React Router mounts, so the app never sees the detour.
+      https://github.com/rafgraph/spa-github-pages
+    -->
+    <script>
+      ;(function (l) {
+        if (l.search[1] === '/') {
+          var decoded = l.search
+            .slice(1)
+            .split('&')
+            .map(function (s) {
+              return s.replace(/~and~/g, '&')
+            })
+            .join('?')
+          window.history.replaceState(null, null, l.pathname.slice(0, -1) + decoded + l.hash)
+        }
+      })(window.location)
+    </script>
+
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
