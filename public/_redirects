@@ -1,0 +1,4 @@
+# SPA fallback (Netlify / Cloudflare Pages).
+# Without this, a direct hit on /packages/kashmir 404s because only index.html
+# exists on disk — the route is resolved client-side.
+/*  /index.html  200

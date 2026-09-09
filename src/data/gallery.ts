@@ -1,0 +1,163 @@
+import type { GalleryImage } from '../types'
+
+/**
+ * Gallery sequence. `ratio` drives the masonry span, so the order below is
+ * also a composition decision — portraits are spaced out rather than clustered
+ * so no column runs long against its neighbours.
+ */
+export const gallery: GalleryImage[] = [
+  {
+    src: 'parvatiValley',
+    alt: 'Cloud sitting low over the forested Parvati valley',
+    caption: 'Low cloud in the Parvati valley',
+    place: 'Himachal Pradesh',
+    ratio: 'landscape',
+  },
+  {
+    src: 'parvatiPortrait',
+    alt: 'A steep forested slope rising above the Parvati river',
+    caption: 'The valley walls above Kasol',
+    place: 'Kasol',
+    ratio: 'portrait',
+  },
+  {
+    src: 'dalLakeShikara',
+    alt: 'An empty shikara moored on Dal Lake',
+    caption: 'An empty shikara, early on Dal Lake',
+    place: 'Srinagar',
+    ratio: 'landscape',
+  },
+  {
+    src: 'hadimbaTemple',
+    alt: 'The tiered pagoda roof of the Hadimba Devi temple among cedars',
+    caption: 'Cedar and timber at the Hadimba temple',
+    place: 'Manali',
+    ratio: 'landscape',
+  },
+  {
+    src: 'udaipurPicholaSunset',
+    alt: 'Sunset over Lake Pichola in Udaipur',
+    caption: 'Last light on Pichola',
+    place: 'Udaipur',
+    ratio: 'landscape',
+  },
+  {
+    src: 'lahaulRoadPortrait',
+    alt: 'A mountain road curving towards the Lahaul valley',
+    caption: 'The road towards Lahaul',
+    place: 'Himachal Pradesh',
+    ratio: 'portrait',
+  },
+  {
+    src: 'kedarnathTemple',
+    alt: 'The stone temple at Kedarnath below snow-covered peaks',
+    caption: 'Kedarnath, under the snow line',
+    place: 'Uttarakhand',
+    ratio: 'landscape',
+  },
+  {
+    src: 'gangaAarti',
+    alt: 'Evening Ganga aarti with lamps on the ghats at Rishikesh',
+    caption: 'Aarti on the ghats',
+    place: 'Rishikesh',
+    ratio: 'landscape',
+  },
+  {
+    src: 'solangParagliding',
+    alt: 'Paragliders above the meadows of Solang Valley',
+    caption: 'Above Solang',
+    place: 'Manali',
+    ratio: 'landscape',
+  },
+  {
+    src: 'atalTunnelPortal',
+    alt: 'The south portal of the Atal Tunnel near Manali',
+    caption: 'The south portal',
+    place: 'Atal Tunnel',
+    ratio: 'portrait',
+  },
+  {
+    src: 'betaabValley',
+    alt: 'Pine forest and mountains in Betaab Valley near Pahalgam',
+    caption: 'Betaab Valley',
+    place: 'Kashmir',
+    ratio: 'landscape',
+  },
+  {
+    src: 'dilwaraCeiling',
+    alt: 'Intricately carved marble ceiling inside the Dilwara temples',
+    caption: 'Carved marble at Dilwara',
+    place: 'Mount Abu',
+    ratio: 'square',
+  },
+  {
+    src: 'tosh',
+    alt: 'The village of Tosh stacked on a steep hillside',
+    caption: 'Tosh, at the head of the valley',
+    place: 'Parvati Valley',
+    ratio: 'landscape',
+  },
+  {
+    src: 'kheergangaCamp',
+    alt: 'Tents pitched on the meadow at Kheerganga',
+    caption: 'Camp at Kheerganga',
+    place: 'Himachal Pradesh',
+    ratio: 'landscape',
+  },
+  {
+    src: 'beasRiver',
+    alt: 'The Beas river running through the Himachal foothills',
+    caption: 'The Beas, below Aut',
+    place: 'Himachal Pradesh',
+    ratio: 'landscape',
+  },
+  {
+    src: 'manaVillage',
+    alt: 'Stone houses of Mana village in Chamoli district',
+    caption: 'Mana, past the temple',
+    place: 'Uttarakhand',
+    ratio: 'landscape',
+  },
+  {
+    src: 'shimlaDeodar',
+    alt: 'Deodar forest around Shimla in monsoon mist',
+    caption: 'Deodar in the monsoon',
+    place: 'Shimla',
+    ratio: 'landscape',
+  },
+  {
+    src: 'nakkiSunset',
+    alt: 'Sunset over Nakki Lake at Mount Abu',
+    caption: 'Nakki Lake at dusk',
+    place: 'Mount Abu',
+    ratio: 'landscape',
+  },
+  {
+    src: 'rafting2',
+    alt: 'A raft running rapids on the Ganga near Rishikesh',
+    caption: 'Running the Ganga',
+    place: 'Rishikesh',
+    ratio: 'landscape',
+  },
+  {
+    src: 'spitiChandraTal',
+    alt: 'Chandra Taal lake in Spiti, Himachal Pradesh',
+    caption: 'Chandra Taal',
+    place: 'Himachal Pradesh',
+    ratio: 'landscape',
+  },
+  {
+    src: 'manikaran',
+    alt: 'The town of Manikaran beside the Parvati river',
+    caption: 'Steam over Manikaran',
+    place: 'Parvati Valley',
+    ratio: 'landscape',
+  },
+  {
+    src: 'gulmargSunset',
+    alt: 'A snowy sunset over the meadows at Gulmarg',
+    caption: 'Snowfall at Gulmarg',
+    place: 'Kashmir',
+    ratio: 'landscape',
+  },
+]

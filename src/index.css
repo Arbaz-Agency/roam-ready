@@ -1,0 +1,456 @@
+@import 'tailwindcss';
+
+/* ==========================================================================
+   ROAM READY — DESIGN SYSTEM
+   Tokens are declared once here and consumed everywhere via Tailwind's
+   theme() bridge (`bg-ivory`, `text-ink`, `font-display`, …).
+   ========================================================================== */
+
+@theme {
+  /* ---- Colour -------------------------------------------------------- */
+  /* Warm neutral ground. Deliberately no blue anywhere in the palette. */
+  --color-ivory: #faf7f1; /* page background        */
+  --color-shell: #f2ede4; /* recessed surface       */
+  --color-surface: #ffffff; /* raised surface         */
+  --color-sand: #e6dccb; /* muted sand             */
+  --color-stone: #b8b1a4; /* natural stone          */
+  --color-border: #e2dbcf; /* hairline rules         */
+  --color-border-strong: #cfc6b7;
+
+  --color-ink: #1a1d19; /* primary text           */
+  --color-muted: #6b7065; /* secondary text         */
+  --color-faint: #8f9389; /* tertiary text          */
+
+  --color-pine: #1f2c22; /* brand primary — deep earthy green */
+  --color-pine-soft: #33463a;
+  --color-moss: #55684f;
+
+  --color-clay: #c25e33; /* accent — warm clay */
+  --color-clay-deep: #a44b28;
+  --color-clay-light: #e08a5c;
+  --color-clay-wash: #f6e9e2;
+  --color-gold: #c9a227; /* secondary accent, used sparingly on dark */
+
+  /* ---- Type ---------------------------------------------------------- */
+  --font-display: 'Fraunces', 'Iowan Old Style', Georgia, serif;
+  --font-sans: 'Manrope', ui-sans-serif, system-ui, -apple-system, sans-serif;
+
+  /* ---- Motion -------------------------------------------------------- */
+  --ease-out-soft: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in-out-soft: cubic-bezier(0.65, 0, 0.35, 1);
+
+  /* ---- Elevation ------------------------------------------------------ */
+  /* Warm-tinted shadows — neutral grey shadows read cheap on ivory. */
+  --shadow-lift: 0 1px 2px rgb(26 29 25 / 0.04), 0 12px 32px -12px rgb(26 29 25 / 0.14);
+  --shadow-float: 0 2px 4px rgb(26 29 25 / 0.05), 0 28px 60px -24px rgb(26 29 25 / 0.24);
+  --shadow-deep: 0 4px 8px rgb(26 29 25 / 0.06), 0 40px 90px -30px rgb(26 29 25 / 0.4);
+  --shadow-glow: 0 20px 60px -20px rgb(194 94 51 / 0.45);
+
+  /* ---- Rhythm --------------------------------------------------------- */
+  --spacing-section: 6rem;
+  --spacing-section-lg: 9rem;
+}
+
+/* ==========================================================================
+   BASE
+   ========================================================================== */
+
+@layer base {
+  * {
+    border-color: var(--color-border);
+  }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    background-color: var(--color-ivory);
+    color: var(--color-ink);
+    font-family: var(--font-sans);
+    font-size: 1rem;
+    line-height: 1.6;
+    font-synthesis-weight: none;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    /* Guards against any single wide child breaking the page on mobile. */
+    overflow-x: hidden;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: var(--font-display);
+    font-weight: 400;
+    /* Let the browser drive Fraunces' optical-size axis from the rendered
+       size — large headings pick up the tighter display cut on their own.
+       Deliberately NOT font-variation-settings, which would override
+       font-weight for anything that needs a heavier heading later. */
+    font-optical-sizing: auto;
+    letter-spacing: -0.02em;
+    line-height: 1.05;
+    text-wrap: balance;
+  }
+
+  p {
+    text-wrap: pretty;
+  }
+
+  /* A single, consistent focus treatment across every interactive element. */
+  :focus-visible {
+    outline: 2px solid var(--color-clay);
+    outline-offset: 3px;
+    border-radius: 2px;
+  }
+
+  ::selection {
+    background-color: var(--color-pine);
+    color: var(--color-ivory);
+  }
+
+  img {
+    display: block;
+    max-width: 100%;
+  }
+
+  /* Native controls inherit the brand rather than the OS. */
+  input,
+  select,
+  textarea,
+  button {
+    font: inherit;
+    color: inherit;
+  }
+}
+
+/* ==========================================================================
+   UTILITIES
+   ========================================================================== */
+
+@utility text-hero {
+  font-size: clamp(2.75rem, 8.5vw, 6.5rem);
+  line-height: 0.96;
+  letter-spacing: -0.035em;
+}
+
+@utility text-display {
+  font-size: clamp(2.25rem, 5.2vw, 4rem);
+  line-height: 1.02;
+  letter-spacing: -0.03em;
+}
+
+@utility text-title {
+  font-size: clamp(1.75rem, 3.2vw, 2.5rem);
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+}
+
+/* Small caps-ish eyebrow. Used sparingly — the only uppercase in the system. */
+@utility eyebrow {
+  font-family: var(--font-sans);
+  font-size: 0.6875rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--color-muted);
+}
+
+@utility lede {
+  font-size: clamp(1.0625rem, 1.5vw, 1.25rem);
+  line-height: 1.6;
+  color: var(--color-muted);
+}
+
+/* Fraunces' italic carries the editorial voice for emphasised words.
+   SOFT rounds the terminals and WONK swaps in the single-storey g / splayed
+   forms — the detail that stops the display face reading as stock Georgia.
+   `wght` is restated because font-variation-settings overrides font-weight. */
+@utility accent-italic {
+  font-style: italic;
+  font-variation-settings:
+    'wght' 400,
+    'SOFT' 45,
+    'WONK' 1;
+}
+
+@utility hide-scrollbar {
+  scrollbar-width: none;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+/* ==========================================================================
+   DEPTH & TEXTURE
+   The difference between "clean" and "premium" is mostly what sits *behind*
+   the content: film grain, warm light, and edges that aren't hard cuts.
+   ========================================================================== */
+
+/* Fine film grain. An SVG turbulence data-URI — no image request, scales to
+   any size, and stops large flat colour fields looking like dead pixels. */
+@utility grain {
+  position: relative;
+  &::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    z-index: 1;
+    opacity: 0.5;
+    mix-blend-mode: overlay;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='140' height='140' filter='url(%23n)' opacity='0.42'/%3E%3C/svg%3E");
+  }
+}
+
+/* Warm light bloom used behind sections and cards. */
+@utility glow-clay {
+  background-image: radial-gradient(
+    60% 60% at 50% 40%,
+    color-mix(in oklab, var(--color-clay) 26%, transparent) 0%,
+    transparent 70%
+  );
+}
+
+@utility glow-moss {
+  background-image: radial-gradient(
+    55% 55% at 50% 50%,
+    color-mix(in oklab, var(--color-moss) 34%, transparent) 0%,
+    transparent 72%
+  );
+}
+
+/* Hairline that fades out at both ends — softer than a full-width border. */
+@utility rule-fade {
+  height: 1px;
+  background-image: linear-gradient(
+    to right,
+    transparent,
+    var(--color-border-strong) 15%,
+    var(--color-border-strong) 85%,
+    transparent
+  );
+}
+
+@utility rule-fade-dark {
+  height: 1px;
+  background-image: linear-gradient(
+    to right,
+    transparent,
+    rgb(250 247 241 / 0.28) 15%,
+    rgb(250 247 241 / 0.28) 85%,
+    transparent
+  );
+}
+
+/* Frosted panel for anything sitting over photography. */
+@utility glass {
+  background-color: rgb(250 247 241 / 0.1);
+  backdrop-filter: blur(14px) saturate(140%);
+  border: 1px solid rgb(250 247 241 / 0.22);
+}
+
+@utility glass-dark {
+  background-color: rgb(26 29 25 / 0.42);
+  backdrop-filter: blur(16px) saturate(130%);
+  border: 1px solid rgb(250 247 241 / 0.14);
+}
+
+/* Warm colour-grade for photography — pulls every image toward the palette
+   so a mixed set of sources still reads as one art direction. */
+@utility graded {
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    pointer-events: none;
+    background:
+      linear-gradient(
+        200deg,
+        color-mix(in oklab, var(--color-clay) 18%, transparent) 0%,
+        transparent 55%
+      ),
+      linear-gradient(
+        20deg,
+        color-mix(in oklab, var(--color-pine) 40%, transparent) 0%,
+        transparent 60%
+      );
+    mix-blend-mode: soft-light;
+  }
+}
+
+/* Text that picks up the accent as a gradient — used on single words. */
+@utility text-gradient-clay {
+  background-image: linear-gradient(
+    100deg,
+    var(--color-clay-light) 0%,
+    var(--color-clay) 45%,
+    var(--color-gold) 100%
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+/* ==========================================================================
+   MOTION
+   Scroll reveals are driven by IntersectionObserver (see useReveal.ts) which
+   flips [data-reveal] to [data-reveal="in"]. Everything degrades to visible
+   if JS never runs, and collapses entirely under reduced-motion.
+   ========================================================================== */
+
+@layer utilities {
+  [data-reveal] {
+    opacity: 0;
+    transform: translateY(18px);
+    transition:
+      opacity 0.9s var(--ease-out-soft),
+      transform 0.9s var(--ease-out-soft);
+    transition-delay: var(--reveal-delay, 0ms);
+  }
+
+  [data-reveal='in'] {
+    opacity: 1;
+    transform: none;
+  }
+
+  /* Image mask-reveal: the frame wipes open, the photo settles out of a
+     slight scale. Reads as photography rather than as a UI animation. */
+  [data-reveal-image] img {
+    transform: scale(1.08);
+    transition: transform 1.4s var(--ease-out-soft);
+  }
+
+  [data-reveal-image='in'] img {
+    transform: scale(1);
+  }
+
+  @keyframes rr-fade-up {
+    from {
+      opacity: 0;
+      transform: translateY(14px);
+    }
+    to {
+      opacity: 1;
+      transform: none;
+    }
+  }
+
+  @keyframes rr-fade-in {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  @keyframes rr-shimmer {
+    to {
+      background-position: -200% 0;
+    }
+  }
+
+  /* Slow push on hero photography — gives a still image a sense of place
+     without the jitter of a parallax listener. */
+  @keyframes rr-kenburns {
+    from {
+      transform: scale(1.04) translate3d(0, 0, 0);
+    }
+    to {
+      transform: scale(1.14) translate3d(-1.2%, -1.4%, 0);
+    }
+  }
+
+  @keyframes rr-drift {
+    0%,
+    100% {
+      transform: translate3d(0, 0, 0);
+    }
+    50% {
+      transform: translate3d(0, -22px, 0);
+    }
+  }
+
+  @keyframes rr-scroll-cue {
+    0% {
+      transform: translateY(-70%);
+      opacity: 0;
+    }
+    35% {
+      opacity: 1;
+    }
+    100% {
+      transform: translateY(240%);
+      opacity: 0;
+    }
+  }
+
+  @keyframes rr-marquee {
+    from {
+      transform: translate3d(0, 0, 0);
+    }
+    to {
+      transform: translate3d(-50%, 0, 0);
+    }
+  }
+
+  .animate-kenburns {
+    animation: rr-kenburns 24s var(--ease-in-out-soft) infinite alternate;
+  }
+
+  .animate-drift {
+    animation: rr-drift 14s ease-in-out infinite;
+  }
+
+  .animate-scroll-cue {
+    animation: rr-scroll-cue 2.4s var(--ease-in-out-soft) infinite;
+  }
+
+  .animate-marquee {
+    animation: rr-marquee 46s linear infinite;
+  }
+
+  .animate-fade-up {
+    animation: rr-fade-up 0.8s var(--ease-out-soft) both;
+  }
+
+  .animate-fade-in {
+    animation: rr-fade-in 0.5s var(--ease-out-soft) both;
+  }
+
+  /* Loading state — a warm shimmer, not a grey box. */
+  .skeleton {
+    background: linear-gradient(
+      90deg,
+      var(--color-shell) 0%,
+      var(--color-sand) 40%,
+      var(--color-shell) 80%
+    );
+    background-size: 200% 100%;
+    animation: rr-shimmer 1.6s linear infinite;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  [data-reveal],
+  [data-reveal-image] img {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
