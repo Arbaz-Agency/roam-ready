@@ -14,7 +14,7 @@ const packagesSrc = readFileSync(resolve(root, 'src/data/packages.ts'), 'utf8')
 const slugs = [...packagesSrc.matchAll(/^\s{4}slug: '([a-z0-9-]+)',$/gm)].map((m) => m[1])
 
 const siteSrc = readFileSync(resolve(root, 'src/data/site.ts'), 'utf8')
-const origin = siteSrc.match(/url:\s*'([^']+)'/)?.[1] ?? 'https://roamready.in'
+const origin = siteSrc.match(/url:\s*'([^']+)'/)?.[1] ?? 'https://roamready.co.in'
 
 if (slugs.length === 0) {
   console.warn('[seo] No package slugs found — sitemap will list static routes only.')
@@ -23,7 +23,6 @@ if (slugs.length === 0) {
 const staticRoutes = [
   { path: '/', priority: '1.0', freq: 'weekly' },
   { path: '/packages', priority: '0.9', freq: 'weekly' },
-  { path: '/destinations', priority: '0.8', freq: 'monthly' },
   { path: '/plan-your-trip', priority: '0.8', freq: 'monthly' },
   { path: '/about', priority: '0.6', freq: 'monthly' },
   { path: '/gallery', priority: '0.5', freq: 'monthly' },

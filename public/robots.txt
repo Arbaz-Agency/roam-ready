@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://roamready.in/sitemap.xml
+Sitemap: https://roamready.co.in/sitemap.xml

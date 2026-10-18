@@ -51,8 +51,8 @@ export default function Gallery() {
   return (
     <>
       <PageHero
-        image="heroGallery"
-        imageAlt="The cold desert landscape of Spiti, Himachal Pradesh"
+        image="kashmirSnowy"
+        imageAlt="Snow peaks above the Kashmir valleys"
         eyebrow="Gallery"
         title={
           <>
@@ -108,9 +108,9 @@ export default function Gallery() {
           </ul>
 
           <p className="mt-10 text-[0.75rem] text-faint">
-            Placeholder photography, freely licensed. See{' '}
+            Photographs are credited on the{' '}
             <a href="/credits" className="underline underline-offset-4 hover:text-ink">
-              credits
+              credits page
             </a>
             .
           </p>

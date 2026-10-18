@@ -8,6 +8,7 @@ import { WhyRoamReady } from '../components/home/WhyRoamReady'
 import { HowItWorks } from '../components/home/HowItWorks'
 import { Testimonials } from '../components/testimonials/Testimonials'
 import { PlanCTA } from '../components/home/PlanCTA'
+import { WhatsAppFloat } from '../components/common/StickyCTA'
 
 const jsonLd = {
   '@context': 'https://schema.org',
@@ -42,6 +43,7 @@ export default function Home() {
       <HowItWorks />
       <Testimonials />
       <PlanCTA />
+      <WhatsAppFloat />
     </>
   )
 }

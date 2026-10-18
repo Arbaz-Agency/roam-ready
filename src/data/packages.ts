@@ -3,14 +3,11 @@ import type { TourPackage } from '../types'
 /**
  * Roam Ready — journeys.
  *
- * ⚠️ PLACEHOLDER CONTENT. Itineraries, pricing and inclusions below are
- * realistic drafts written to exercise the templates, not confirmed Roam Ready
- * offerings. Prices are indicative starting points; stays are described by
- * category rather than by property name; nothing here promises a specific
- * hotel, vehicle, permit or meal plan.
+ * Itineraries and inclusions follow Roam Ready's official trip PDFs. Prices are
+ * indicative starting points and are confirmed in the written quote at booking.
  *
- * To add a ninth journey: append one object. Routing, filtering, the detail
- * template, sitemap and structured data all derive from this array.
+ * To add a journey: append one object. Routing, the detail page, sitemap and
+ * structured data all derive from this array.
  */
 export const packages: TourPackage[] = [
   /* ------------------------------------------------------------------ */

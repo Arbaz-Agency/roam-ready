@@ -5,10 +5,8 @@ import { Container, Section } from '../components/common/Section'
 /**
  * Photography credits.
  *
- * The build ships with freely-licensed placeholder photography, and those
- * licences require attribution. This page is generated straight from the media
- * manifest, so it stays accurate as images are swapped — and can simply be
- * removed once the site runs on owned photography.
+ * Freely licensed photographs require attribution. This page is generated from
+ * the media manifest, so it stays accurate as images are added or replaced.
  */
 export default function Credits() {
   useSeo({
@@ -34,14 +32,9 @@ export default function Credits() {
         <p className="eyebrow mb-6">Credits</p>
         <h1 className="text-display">Photography</h1>
         <p className="lede mt-6 max-w-2xl">
-          Roam Ready is built with Creative Commons placeholder photography of the destinations we
-          travel to. Every photograph is used under a licence permitting commercial use and
-          modification, and is credited to its author below.
-        </p>
-        <p className="mt-5 max-w-2xl text-[0.875rem] leading-relaxed text-muted">
-          These are placeholders. Before launch they should be replaced with commissioned or
-          licensed photography — a single edit to <code className="text-ink">src/data/media.ts</code>{' '}
-          swaps every image on the site.
+          The photographs on this website are of the destinations we travel to. Each one is used
+          under a Creative Commons or similar licence that permits use on a commercial website, and
+          is credited to its author below.
         </p>
 
         <ul className="mt-14 border-t border-border">

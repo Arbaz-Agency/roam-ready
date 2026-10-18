@@ -29,8 +29,8 @@ export default function Packages() {
   return (
     <>
       <PageHero
-        image="heroPackages"
-        imageAlt="Chandra Taal lake in Spiti beneath the Himalayan range"
+        image="kashmirSnowy"
+        imageAlt="Snow peaks above the Kashmir valleys"
         eyebrow="Journeys"
         title={
           <>

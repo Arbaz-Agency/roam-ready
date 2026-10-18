@@ -37,8 +37,8 @@ export default function About() {
   return (
     <>
       <PageHero
-        image="heroAbout"
-        imageAlt="Snow-covered orchards in the Sangla valley, Himachal Pradesh"
+        image="manaliValley"
+        imageAlt="Sunset light over the mountains above the Manali valley"
         eyebrow="About us"
         title={
           <>
@@ -88,7 +88,7 @@ export default function About() {
             <div className="lg:sticky lg:top-28">
               <Media
                 name="storyMountains"
-                alt="Snow-covered peaks of the Rohtang range above the Manali valley"
+                alt="Snow-covered peaks above the Manali valley"
                 aspect="aspect-[4/5]"
                 rounded="rounded-3xl"
                 sizes="(min-width: 1024px) 46vw, 100vw"
@@ -148,7 +148,7 @@ export default function About() {
             {[
               {
                 image: 'manaliValley' as const,
-                alt: 'The Rohtang range above Manali',
+                alt: 'Snow-covered peaks above Manali',
                 region: 'Himachal Pradesh',
                 body: 'Manali, Solang Valley and the riverside camps of Kasol, our most requested mountain trips.',
               },

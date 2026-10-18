@@ -54,8 +54,8 @@ export function Footer() {
               />
             </Link>
             <p className="mt-6 text-[0.9375rem] leading-relaxed text-ivory/65">
-              Curated journeys across the Himalayas, Rajasthan and beyond — planned slowly, run
-              properly, and built around the people travelling.
+              Hill, lake and temple tours from Delhi across Himachal, Kashmir, Uttarakhand and
+              Rajasthan — planned around daylight, vegetarian meals and the people travelling.
             </p>
 
             <a

@@ -10,8 +10,7 @@ export const site = {
   description:
     'Roam Ready plans hill, lake and temple tours from Delhi, across Kashmir, Uttarakhand, Himachal and Rajasthan — with vegetarian meals, daylight travel and one contact for your whole trip.',
 
-  /** PLACEHOLDER — set to the production domain. */
-  url: 'https://roamready.in',
+  url: 'https://roamready.co.in',
 
   contact: {
     phoneDisplay: '+91 99584 46827',
