@@ -5,7 +5,6 @@ import { Hero } from '../components/home/Hero'
 import { Marquee } from '../components/home/Marquee'
 import { FeaturedJourneys } from '../components/home/FeaturedJourneys'
 import { WhyRoamReady } from '../components/home/WhyRoamReady'
-import { Collections } from '../components/home/Collections'
 import { HowItWorks } from '../components/home/HowItWorks'
 import { Testimonials } from '../components/testimonials/Testimonials'
 import { PlanCTA } from '../components/home/PlanCTA'
@@ -28,7 +27,7 @@ const jsonLd = {
 
 export default function Home() {
   useSeo({
-    title: 'Roam Ready | Curated Journeys Across India',
+    title: 'Roam Ready | Hill & Temple Tours from Delhi',
     description: site.description,
     path: '/',
     jsonLd,
@@ -40,7 +39,6 @@ export default function Home() {
       <Marquee />
       <FeaturedJourneys />
       <WhyRoamReady />
-      <Collections />
       <HowItWorks />
       <Testimonials />
       <PlanCTA />

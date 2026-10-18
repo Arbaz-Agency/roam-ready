@@ -1,4 +1,3 @@
-import { site } from '../data/site'
 import { useSeo } from '../utils/seo'
 import { PageHero } from '../components/layout/PageHero'
 import { Container, Section, SectionHeading } from '../components/common/Section'
@@ -11,19 +10,19 @@ import { ArrowRight } from '../components/common/Icons'
 const principles = [
   {
     title: 'We plan for daylight, not for distance',
-    body: 'The single biggest thing that ruins a mountain trip is a schedule built by someone looking at a map instead of a clock. We build around when the light is good and when the roads are open.',
+    body: 'Mountain roads are slow, and many close after dark. We schedule drives in daylight and keep the difficult stretches short.',
   },
   {
     title: 'We would rather say no',
-    body: 'If a route does not work in your dates, or the version you have been quoted elsewhere is too compressed to enjoy, we will tell you before you book rather than after.',
+    body: 'If a route will not work for your dates, or a quote is too rushed to enjoy, we tell you before you pay, not after.',
   },
   {
     title: 'Empty afternoons are deliberate',
-    body: 'Every itinerary we write has unscheduled time in it. That is not us running out of ideas — it is the part people describe when they get home.',
+    body: 'Every itinerary keeps free time for rest, a walk or the local market. That is part of the trip, not a gap in it.',
   },
   {
     title: 'One person, start to finish',
-    body: 'The person who plans your trip is the person who answers the phone while you are on it. No handover, no ticket queue.',
+    body: 'The person who plans your trip is the person you call on the road. No handover, no ticket queue.',
   },
 ]
 
@@ -31,7 +30,7 @@ export default function About() {
   useSeo({
     title: 'About Roam Ready | How We Plan Travel',
     description:
-      'Roam Ready is a small travel team designing curated journeys across India — planned around daylight, altitude and rest rather than around cramming in stops.',
+      'Roam Ready plans hill, lake and temple trips from Delhi for Indian families, couples and friends — with vegetarian meals, daylight travel and one contact for the whole trip.',
     path: '/about',
   })
 
@@ -57,24 +56,25 @@ export default function About() {
             <div className="lg:col-span-5" data-reveal>
               <p className="eyebrow mb-6">Our story</p>
               <h2 className="text-display">
-                It started with a badly planned trip.
+                Hill trips should be restful, not a race.
               </h2>
             </div>
 
             <div className="lg:col-span-7 lg:pt-3" data-reveal>
               <p className="font-display text-[1.375rem] leading-[1.45] tracking-[-0.015em] sm:text-[1.625rem]">
-                Five days, four hill stations, and about eleven hours a day in a vehicle. We came
-                back exhausted, with a camera roll full of places we had technically been to.
+                Many families plan a hill holiday as a checklist: as many places as possible in as few
+                days as possible. The result is long drives, tired children and photos of places
+                nobody really saw.
               </p>
               <p className="mt-6 text-[1rem] leading-relaxed text-muted">
-                Roam Ready came out of that. The premise is not complicated: most travel in India is
-                sold on how much you can fit in, and almost nobody enjoys travelling that way. We
-                would rather plan fewer stops, at better hours, with somewhere decent to sleep and
-                someone reachable when the weather changes the plan.
+                Roam Ready plans it differently. Fewer stops, better travel hours, clean vegetarian
+                meals, comfortable stays close to the sights, and someone reachable when the weather
+                changes the plan. Whether you are going with parents, a group of friends or a
+                newly married couple, the pace is built around you.
               </p>
               <p className="mt-5 text-[1rem] leading-relaxed text-muted">
-                We are a small team, and that is deliberate. It means the person who writes your
-                itinerary has usually driven the road it is built on.
+                We are a small team, so the person who writes your itinerary is the same person who
+                answers your calls and WhatsApp messages during the trip.
               </p>
             </div>
           </div>
@@ -150,25 +150,25 @@ export default function About() {
                 image: 'manaliValley' as const,
                 alt: 'The Rohtang range above Manali',
                 region: 'Himachal Pradesh',
-                body: 'Manali, the Parvati valley and the Shimla ridge — our most travelled ground.',
+                body: 'Manali, Solang Valley and the riverside camps of Kasol, our most requested mountain trips.',
               },
               {
                 image: 'pahalgamValley' as const,
                 alt: 'The Pahalgam valley in Kashmir',
                 region: 'Kashmir',
-                body: 'Srinagar, Pahalgam, Gulmarg and Sonamarg, at a pace that lets you look up.',
+                body: 'Houseboats on Dal Lake, plus Gulmarg, Sonamarg and Pahalgam, at a pace that lets you look up.',
               },
               {
                 image: 'kedarnathWalkover' as const,
                 alt: 'The pilgrim route towards Kedarnath',
                 region: 'Uttarakhand',
-                body: 'Kedarnath, Badrinath and Rishikesh — routes shaped by pilgrimage.',
+                body: 'Kedarnath Dham and the lake town of Nainital, planned around darshan timings and road conditions.',
               },
               {
                 image: 'udaipurPicholaSunset' as const,
                 alt: 'Sunset over Lake Pichola in Udaipur',
                 region: 'Rajasthan',
-                body: 'Udaipur and Mount Abu, timed around the light and away from the heat.',
+                body: 'Udaipur and Mount Abu, with the cooler hill station as a break from the heat.',
               },
             ].map((r, i) => (
               <article
@@ -206,20 +206,20 @@ export default function About() {
               <dl className="border-t border-ivory/15">
                 {[
                   {
-                    t: 'Honest pricing',
-                    d: 'Indicative starting prices on every journey, and a written quote before you commit. What is excluded is listed as plainly as what is included.',
+                    t: 'Clear pricing in rupees',
+                    d: 'A starting price on every journey, and a written quote in ₹ before you pay. Inclusions and exclusions are listed in full, with no hidden charges.',
                   },
                   {
-                    t: 'Vetted stays and drivers',
-                    d: 'We use accommodation and vehicles we have used before. Where a property cannot be confirmed until booking, we say so rather than printing a name we cannot honour.',
+                    t: 'Stays and drivers we trust',
+                    d: 'We work with hotels, camps and drivers we know. If a property is only confirmed at booking, we tell you that upfront.',
                   },
                   {
-                    t: 'Weather-first decisions',
-                    d: 'If a road, a trek or an activity is not safe on the day, it does not run. We will restructure the day rather than push an itinerary through bad conditions.',
+                    t: 'Safety-first decisions',
+                    d: 'If a road, a trek or a helicopter is not safe on the day, it does not run. We adjust the day rather than push through bad weather.',
                   },
                   {
                     t: 'Reachable while you travel',
-                    d: 'One point of contact, on a phone, for the whole trip.',
+                    d: 'One point of contact by phone or WhatsApp for the whole trip.',
                   },
                 ].map((row) => (
                   <div key={row.t} className="border-b border-ivory/15 py-7">
@@ -242,8 +242,8 @@ export default function About() {
               </div>
 
               <p className="mt-8 text-[0.75rem] leading-relaxed text-ivory/40">
-                Registered as {site.name}. Itineraries shown across this site are indicative;
-                inclusions, stays and pricing are confirmed in writing at the time of booking.
+                Itineraries on this site are indicative. Inclusions, stays and pricing are confirmed
+                in writing at the time of booking.
               </p>
             </div>
           </div>

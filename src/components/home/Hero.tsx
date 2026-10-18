@@ -1,10 +1,6 @@
-import { useState } from 'react'
-import { useNavigate } from 'react-router-dom'
-import { destinations } from '../../data/destinations'
-import { cn } from '../../utils/cn'
 import { Media } from '../common/Media'
 import { Button } from '../common/Button'
-import { ArrowRight, Compass } from '../common/Icons'
+import { ArrowRight } from '../common/Icons'
 
 /**
  * Homepage hero.
@@ -19,9 +15,6 @@ import { ArrowRight, Compass } from '../common/Icons'
  * contrast against a bright sky.
  */
 export function Hero() {
-  const navigate = useNavigate()
-  const [active, setActive] = useState<string | null>(null)
-
   return (
     <section className="grain relative min-h-[100svh] w-full overflow-hidden bg-pine">
       {/* Photograph + slow push */}
@@ -75,25 +68,25 @@ export function Hero() {
               style={{ animationDelay: '120ms' }}
             >
               <span className="h-px w-12 bg-clay-light" />
-              <p className="eyebrow text-ivory/80">Curated journeys across India</p>
+              <p className="eyebrow text-ivory/80">Hill, lake and heritage trips from Delhi</p>
             </div>
 
             <h1
               className="text-hero text-ivory drop-shadow-[0_2px_30px_rgba(12,14,11,0.5)] animate-fade-up"
               style={{ animationDelay: '220ms' }}
             >
-              Go somewhere
+              Plan your escape
               <br />
-              worth{' '}
-              <span className="accent-italic text-gradient-clay">remembering.</span>
+              to the{' '}
+              <span className="accent-italic text-gradient-clay">mountains.</span>
             </h1>
 
             <p
               className="mt-8 max-w-xl text-[1.0625rem] leading-relaxed text-ivory/80 sm:text-[1.1875rem] animate-fade-up"
               style={{ animationDelay: '340ms' }}
             >
-              Curated journeys, unforgettable landscapes, and travel experiences designed around
-              you.
+              Mountain valleys, sacred temples and lake cities, planned with vegetarian meals,
+              sensible travel times and one person to call when you need them.
             </p>
 
             <div
@@ -107,57 +100,6 @@ export function Hero() {
               <Button to="/plan-your-trip" size="lg" variant="light">
                 Plan My Trip
               </Button>
-            </div>
-          </div>
-
-          {/* Destination rail — a frosted panel rather than a bare row. */}
-          <div
-            className="mt-12 animate-fade-up sm:mt-16"
-            style={{ animationDelay: '560ms' }}
-          >
-            <div className="mb-4 flex items-center gap-2.5 text-ivory/60">
-              <Compass className="h-4 w-4" />
-              <span className="text-[0.6875rem] font-semibold uppercase tracking-[0.16em]">
-                Where to?
-              </span>
-            </div>
-
-            <div className="hide-scrollbar -mx-5 flex gap-2.5 overflow-x-auto px-5 pb-1 sm:-mx-8 sm:px-8 lg:-mx-12 lg:px-12">
-              {destinations.map((d) => (
-                <button
-                  key={d.slug}
-                  type="button"
-                  onMouseEnter={() => setActive(d.slug)}
-                  onMouseLeave={() => setActive(null)}
-                  onFocus={() => setActive(d.slug)}
-                  onBlur={() => setActive(null)}
-                  onClick={() =>
-                    navigate(
-                      d.packages.length === 1
-                        ? `/packages/${d.packages[0]}`
-                        : `/destinations#${d.slug}`,
-                    )
-                  }
-                  className={cn(
-                    'shrink-0 rounded-full px-5 py-2.5 text-[0.8125rem] font-medium',
-                    'transition-all duration-400 ease-[cubic-bezier(0.16,1,0.3,1)]',
-                    'hover:-translate-y-0.5',
-                    active === d.slug
-                      ? 'bg-ivory text-pine shadow-lift'
-                      : 'glass text-ivory/90',
-                  )}
-                >
-                  {d.name}
-                  <span
-                    className={cn(
-                      'ml-2 inline-block text-[0.6875rem] transition-opacity duration-300',
-                      active === d.slug ? 'opacity-55' : 'opacity-0',
-                    )}
-                  >
-                    {d.region.split(' ')[0]}
-                  </span>
-                </button>
-              ))}
             </div>
           </div>
         </div>

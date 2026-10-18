@@ -6,17 +6,17 @@ const steps = [
   {
     n: '01',
     title: 'Choose your journey',
-    body: 'Browse the routes, or tell us roughly where and when. Either starting point is fine.',
+    body: 'Browse the packages, or WhatsApp us your city, dates and number of travellers.',
   },
   {
     n: '02',
     title: 'Tell us your plans',
-    body: 'Dates, group, pace, budget. We come back with an itinerary written for you, not a brochure.',
+    body: 'Share your dates, group size, budget and pace. We send back a plan written for you, not a brochure.',
   },
   {
     n: '03',
     title: 'We handle the rest',
-    body: 'Stays, transfers, timings and someone on the end of a phone for the whole trip.',
+    body: 'We book the stays, transport and timings. One person stays in touch with you through the trip.',
   },
 ]
 
@@ -39,7 +39,7 @@ export function HowItWorks() {
         <div className="mx-auto max-w-2xl text-center" data-reveal>
           <p className="eyebrow mb-6 text-ivory/50">How it works</p>
           <h2 className="text-display text-ivory">
-            Three steps, then you can stop <span className="accent-italic text-clay-light">thinking</span> about it.
+            Three simple steps, then <span className="accent-italic text-clay-light">relax.</span>
           </h2>
         </div>
 

@@ -14,23 +14,23 @@ import { ArrowRight } from '../common/Icons'
 const points = [
   {
     title: 'Carefully planned journeys',
-    body: 'Routes built around daylight, altitude and rest — not around fitting the most stops into the fewest days.',
+    body: 'Routes timed around road conditions, altitude and rest, so you are not spending the whole trip in a car.',
   },
   {
     title: 'Reliable stays and transfers',
-    body: 'Accommodation and vehicles we have used before, with a driver who knows the road you are actually on.',
+    body: 'Hotels and vehicles we have used before, with drivers who know the mountain roads well.',
   },
   {
     title: 'Local experiences',
-    body: 'The short detours and the right hour to be somewhere. Usually the part people remember.',
+    body: 'Temple darshan, a boat ride on the lake and a local meal, each at the right hour.',
   },
   {
     title: 'Flexible customisation',
-    body: 'Every itinerary is a starting point. Most travellers change something, and that is the intended use.',
+    body: 'Add a day, slow the pace, or plan around elders and children. Most families change something, and we expect that.',
   },
   {
     title: 'Dedicated support',
-    body: 'One point of contact before you leave and while you are on the road. Not a rota, not a ticket queue.',
+    body: 'One contact on WhatsApp or phone, before you leave and while you are on the road.',
   },
 ]
 
@@ -55,15 +55,15 @@ export function WhyRoamReady() {
               data-reveal
               style={{ '--reveal-delay': '60ms' } as React.CSSProperties}
             >
-              Travel should feel <span className="accent-italic text-clay">effortless.</span>
+              Hill travel, <span className="accent-italic text-clay">planned properly.</span>
             </h2>
             <p
               className="lede mt-6 max-w-lg"
               data-reveal
               style={{ '--reveal-delay': '120ms' } as React.CSSProperties}
             >
-              The planning is the part that goes wrong. We take it off you, and then stay reachable
-              for the parts that cannot be planned.
+              Most trips go wrong in the planning. We handle the bookings and the timings, then stay
+              reachable for everything that cannot be planned in advance.
             </p>
 
             <ul className="mt-12">
@@ -102,7 +102,7 @@ export function WhyRoamReady() {
               style={{ '--reveal-delay': '200ms' } as React.CSSProperties}
             >
               <Button to="/about" variant="secondary">
-                More about how we work
+                Why travel with us
                 <ArrowRight className="h-4 w-4 transition-transform duration-400 group-hover/btn:translate-x-1" />
               </Button>
             </div>
@@ -132,7 +132,7 @@ export function WhyRoamReady() {
 
               {/* Floating figure — anchors the composition and adds a fact. */}
               <div className="absolute left-0 top-8 -translate-x-4 rounded-2xl bg-pine px-5 py-4 text-ivory shadow-deep sm:-translate-x-8">
-                <p className="font-display text-[1.75rem] leading-none">8</p>
+                <p className="font-display text-[1.75rem] leading-none">5</p>
                 <p className="mt-1 text-[0.6875rem] uppercase tracking-[0.14em] text-ivory/60">
                   Curated routes
                 </p>

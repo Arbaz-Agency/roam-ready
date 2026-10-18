@@ -4,6 +4,7 @@ import { navLinks, site } from '../../data/site'
 import { cn } from '../../utils/cn'
 import { Button } from '../common/Button'
 import { Close, Menu } from '../common/Icons'
+import { ThemeToggle } from '../common/ThemeToggle'
 import { MobileNav } from './MobileNav'
 
 /**
@@ -73,26 +74,17 @@ export function Navbar({ overlay = false }: { overlay?: boolean }) {
               solid ? 'text-ink' : 'text-ivory',
             )}
           >
-            {/* Compass-needle mark, matching the favicon. */}
-            <svg viewBox="0 0 24 24" aria-hidden="true" className="h-5 w-5 shrink-0">
-              <circle
-                cx="12"
-                cy="12"
-                r="9.5"
-                fill="none"
-                stroke="currentColor"
-                strokeOpacity="0.35"
-                strokeWidth="1.3"
-              />
-              <path
-                d="M16.4 7.6 13.2 13.2 7.6 16.4l3.2-5.6 5.6-3.2Z"
-                className="fill-clay transition-transform duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:rotate-[135deg]"
-                style={{ transformOrigin: '50% 50%' }}
-              />
-            </svg>
-            <span className="font-display text-[1.0625rem] leading-none tracking-[0.16em]">
-              ROAM READY
-            </span>
+            {/* Official logo, on a light tile so its colours hold on the dark hero. */}
+            <img
+              src={`${import.meta.env.BASE_URL}roam-ready-logo.png`}
+              alt="Roam Ready"
+              width={1254}
+              height={1254}
+              className={cn(
+                'rounded-xl bg-white object-contain p-1 transition-all duration-500',
+                solid ? 'h-14 w-14' : 'h-20 w-20',
+              )}
+            />
           </Link>
 
           <nav aria-label="Primary" className="hidden lg:block">
@@ -127,7 +119,9 @@ export function Navbar({ overlay = false }: { overlay?: boolean }) {
             </ul>
           </nav>
 
-          <div className="flex items-center gap-3">
+          <div className="flex items-center gap-2 sm:gap-3">
+            <ThemeToggle onDark={!solid} />
+
             <Button
               to="/plan-your-trip"
               size="sm"

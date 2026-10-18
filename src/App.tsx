@@ -15,7 +15,6 @@ const Home = lazy(() => import('./pages/Home'))
 const About = lazy(() => import('./pages/About'))
 const Packages = lazy(() => import('./pages/Packages'))
 const PackageDetails = lazy(() => import('./pages/PackageDetails'))
-const Destinations = lazy(() => import('./pages/Destinations'))
 const Gallery = lazy(() => import('./pages/Gallery'))
 const PlanYourTrip = lazy(() => import('./pages/PlanYourTrip'))
 const Contact = lazy(() => import('./pages/Contact'))
@@ -33,7 +32,6 @@ const routes = [
       { path: '/about', element: page(<About />) },
       { path: '/packages', element: page(<Packages />) },
       { path: '/packages/:slug', element: page(<PackageDetails />) },
-      { path: '/destinations', element: page(<Destinations />) },
       { path: '/gallery', element: page(<Gallery />) },
       { path: '/plan-your-trip', element: page(<PlanYourTrip />) },
       { path: '/contact', element: page(<Contact />) },

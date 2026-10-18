@@ -1315,6 +1315,35 @@ export const media = {
     license: "CC BY-SA 2.0",
     source: "https://www.flickr.com/photos/27773459@N04/2723042359",
   },
+
+  /* ---- Locally hosted, from Wikimedia Commons (see credits) ---- */
+  /** Naini Lake, Nainital */
+  nainitalLake: {
+    base: `${import.meta.env.BASE_URL}photos/nainital-naini-lake_`,
+    variants: [800],
+    ratio: 1.33,
+    credit: "Nickk Bisht",
+    license: "CC BY-SA 4.0",
+    source: "https://commons.wikimedia.org/wiki/File:Naini_Lake_Nainital.jpg",
+  },
+  /** Aarti at Har-ki-Pauri, Haridwar */
+  haridwarAarti: {
+    base: `${import.meta.env.BASE_URL}photos/haridwar-har-ki-pauri-aarti_`,
+    variants: [800],
+    ratio: 1.33,
+    credit: "NID chick",
+    license: "CC BY 2.5",
+    source: "https://commons.wikimedia.org/wiki/File:Aarti_at_Har-ki-Pauri,_Haridwar.jpg",
+  },
+  /** India Gate, New Delhi */
+  delhiIndiaGate: {
+    base: `${import.meta.env.BASE_URL}photos/delhi-india-gate_`,
+    variants: [800],
+    ratio: 1.5,
+    credit: "Vyacheslav Argenberg",
+    license: "CC BY 4.0",
+    source: "https://commons.wikimedia.org/wiki/File:Delhi,_India,_India_Gate.jpg",
+  },
 } as const satisfies Record<string, ImageAsset>
 
 export type MediaKey = keyof typeof media

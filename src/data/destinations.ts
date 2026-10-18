@@ -13,7 +13,7 @@ export const destinations: Destination[] = [
     image: 'manaliValley',
     imageAlt: 'The snow-covered Rohtang range above Manali',
     categories: ['Mountain', 'Adventure', 'Family', 'Couple'],
-    packages: ['manali-kasol', 'shimla-manali-kasol'],
+    packages: ['manali-kasol'],
   },
   {
     slug: 'kasol',
@@ -23,27 +23,7 @@ export const destinations: Destination[] = [
     image: 'kasolTown',
     imageAlt: 'Kasol village beside the Parvati river',
     categories: ['Mountain', 'Adventure', 'Couple'],
-    packages: ['manali-kasol', 'kasol-kheerganga', 'shimla-manali-kasol'],
-  },
-  {
-    slug: 'kheerganga',
-    name: 'Kheerganga',
-    region: 'Himachal Pradesh',
-    blurb: 'Hot springs in a high meadow, five hours uphill from the nearest road.',
-    image: 'kheergangaCamp',
-    imageAlt: 'The camping meadow at Kheerganga',
-    categories: ['Adventure', 'Mountain'],
-    packages: ['kasol-kheerganga'],
-  },
-  {
-    slug: 'shimla',
-    name: 'Shimla',
-    region: 'Himachal Pradesh',
-    blurb: 'A colonial hill station layered along a forested ridge.',
-    image: 'shimlaCity',
-    imageAlt: 'The city of Shimla along the ridge',
-    categories: ['Heritage', 'Family', 'Leisure'],
-    packages: ['shimla-manali-kasol'],
+    packages: ['manali-kasol'],
   },
   {
     slug: 'kashmir',
@@ -86,24 +66,14 @@ export const destinations: Destination[] = [
     packages: ['kedarnath'],
   },
   {
-    slug: 'badrinath',
-    name: 'Badrinath',
+    slug: 'nainital',
+    name: 'Nainital',
     region: 'Uttarakhand',
-    blurb: 'The last temple before the border, reached by road through the gorge.',
-    image: 'badrinathTemple',
-    imageAlt: 'The Badrinath temple in early morning light',
-    categories: ['Spiritual', 'Family'],
-    packages: ['badrinath'],
-  },
-  {
-    slug: 'rishikesh',
-    name: 'Rishikesh',
-    region: 'Uttarakhand',
-    blurb: 'Whitewater by day, lamplight on the river at dusk.',
-    image: 'lakshmanJhula2',
-    imageAlt: 'The Lakshman Jhula bridge at Rishikesh',
-    categories: ['Adventure', 'Spiritual', 'Group'],
-    packages: ['rishikesh', 'kedarnath', 'badrinath'],
+    blurb: 'A lake town in the Kumaon hills, a short run from Delhi.',
+    image: 'rishikeshView',
+    imageAlt: 'A lake view in the Uttarakhand hills',
+    categories: ['Mountain', 'Family', 'Couple', 'Leisure'],
+    packages: ['nainital'],
   },
 ]
 
@@ -130,8 +100,8 @@ export const collections: Collection[] = [
     destinations: [
       { name: 'Manali', slug: 'manali' },
       { name: 'Kasol', slug: 'kasol' },
-      { name: 'Kheerganga', slug: 'kheerganga' },
       { name: 'Kashmir', slug: 'kashmir' },
+      { name: 'Nainital', slug: 'nainital' },
     ],
   },
   {
@@ -142,8 +112,6 @@ export const collections: Collection[] = [
     imageAlt: 'The pilgrim trail leading towards Kedarnath',
     destinations: [
       { name: 'Kedarnath', slug: 'kedarnath' },
-      { name: 'Badrinath', slug: 'badrinath' },
-      { name: 'Rishikesh', slug: 'rishikesh' },
     ],
   },
   {

@@ -14,7 +14,7 @@ import { ArrowUpRight } from '../common/Icons'
  * are named here so the arrangement stays intentional as the catalogue grows.
  */
 const LEAD = 'kashmir'
-const SUPPORTING = ['manali-kasol', 'rishikesh', 'udaipur-mount-abu']
+const SUPPORTING = ['manali-kasol', 'nainital', 'udaipur-mount-abu']
 
 function Meta({ pkg, onDark = false }: { pkg: TourPackage; onDark?: boolean }) {
   return (
@@ -69,12 +69,12 @@ export function FeaturedJourneys() {
 
       <Container wide className="relative">
         <SectionHeading
-          eyebrow="Featured journeys"
+          eyebrow="Our most requested trips"
           title={
             <>
-              A few places worth
-              <br className="hidden sm:block" /> clearing your{' '}
-              <span className="accent-italic text-clay">calendar</span> for.
+              Five journeys from Delhi,
+              <br className="hidden sm:block" /> worth{' '}
+              <span className="accent-italic text-clay">planning ahead</span> for.
             </>
           }
           aside={

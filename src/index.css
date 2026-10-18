@@ -8,28 +8,28 @@
 
 @theme {
   /* ---- Colour -------------------------------------------------------- */
-  /* Warm neutral ground. Deliberately no blue anywhere in the palette. */
-  --color-ivory: #faf7f1; /* page background        */
-  --color-shell: #f2ede4; /* recessed surface       */
+  /* Matches the Roam Ready logo: teal ground, orange accent, white space. */
+  --color-ivory: #f7fbfb; /* page background        */
+  --color-shell: #eef6f6; /* recessed surface       */
   --color-surface: #ffffff; /* raised surface         */
-  --color-sand: #e6dccb; /* muted sand             */
-  --color-stone: #b8b1a4; /* natural stone          */
-  --color-border: #e2dbcf; /* hairline rules         */
-  --color-border-strong: #cfc6b7;
+  --color-sand: #dcecec; /* muted teal-sand        */
+  --color-stone: #9fbfc0; /* soft teal-grey         */
+  --color-border: #d4e6e6; /* hairline rules         */
+  --color-border-strong: #b7d3d4;
 
-  --color-ink: #1a1d19; /* primary text           */
-  --color-muted: #6b7065; /* secondary text         */
-  --color-faint: #8f9389; /* tertiary text          */
+  --color-ink: #17323b; /* primary text           */
+  --color-muted: #4d6b72; /* secondary text         */
+  --color-faint: #7f9ba0; /* tertiary text          */
 
-  --color-pine: #1f2c22; /* brand primary — deep earthy green */
-  --color-pine-soft: #33463a;
-  --color-moss: #55684f;
+  --color-pine: #0e5f66; /* brand primary — logo teal */
+  --color-pine-soft: #137a80;
+  --color-moss: #2a9aa0; /* lighter teal */
 
-  --color-clay: #c25e33; /* accent — warm clay */
-  --color-clay-deep: #a44b28;
-  --color-clay-light: #e08a5c;
-  --color-clay-wash: #f6e9e2;
-  --color-gold: #c9a227; /* secondary accent, used sparingly on dark */
+  --color-clay: #f2692a; /* accent — logo orange */
+  --color-clay-deep: #d4511a;
+  --color-clay-light: #f9975f;
+  --color-clay-wash: #fdeee6;
+  --color-gold: #f5b041; /* sunny highlight, used sparingly on dark */
 
   /* ---- Type ---------------------------------------------------------- */
   --font-display: 'Fraunces', 'Iowan Old Style', Georgia, serif;
@@ -49,6 +49,45 @@
   /* ---- Rhythm --------------------------------------------------------- */
   --spacing-section: 6rem;
   --spacing-section-lg: 9rem;
+}
+
+/* ==========================================================================
+   BRIGHT THEME
+   The default above ("Warm") is a muted, earthy palette. Bright is the
+   alternative a visitor can switch to via the header toggle — same brand
+   hues, but a crisp white ground, cooler neutrals and more saturated accents,
+   for a higher-key, sunlit feel. Both are light themes; this is not a
+   light/dark switch, so it never consults prefers-color-scheme.
+   Only the tokens that actually change are redeclared here — everything
+   else (type, motion, shadow shape) is shared. Because Tailwind v4 compiles
+   @theme values to real CSS custom properties on :root, overriding them
+   under this attribute selector repaints every `bg-ivory`, `text-clay`, …
+   utility on the page with no component changes required.
+   ========================================================================== */
+:root[data-theme='bright'] {
+  --color-ivory: #ffffff;
+  --color-shell: #f3fafa;
+  --color-sand: #e3f2f2;
+  --color-stone: #a9cccd;
+  --color-border: #e2f0f0;
+  --color-border-strong: #c6e0e0;
+
+  --color-ink: #0f2a33;
+  --color-muted: #4f6e75;
+  --color-faint: #86a1a6;
+
+  --color-pine: #0b5258;
+  --color-pine-soft: #0f6e74;
+  --color-moss: #1fa3a8;
+
+  --color-clay: #ff7a33;
+  --color-clay-deep: #e05a18;
+  --color-clay-light: #ffa169;
+  --color-clay-wash: #fff0e6;
+  --color-gold: #ffc145;
+
+  /* Retint the clay-coloured glow to match the brighter, more saturated clay. */
+  --shadow-glow: 0 20px 60px -20px rgb(226 101 47 / 0.45);
 }
 
 /* ==========================================================================
@@ -335,6 +374,15 @@
     to {
       opacity: 1;
       transform: none;
+    }
+  }
+
+  @keyframes rr-progress {
+    from {
+      transform: scaleX(0);
+    }
+    to {
+      transform: scaleX(1);
     }
   }
 

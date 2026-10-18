@@ -9,7 +9,6 @@ const OVERLAY_ROUTES = [
   '/',
   '/about',
   '/packages',
-  '/destinations',
   '/gallery',
   '/contact',
   '/plan-your-trip',

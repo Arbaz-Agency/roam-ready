@@ -2,6 +2,18 @@
 <html lang="en">
   <head>
     <!--
+      Applies a saved theme choice (see src/utils/useTheme.ts) before first
+      paint. Runs first, synchronously, so a returning visitor who picked
+      "Bright" never sees a flash of the default Warm palette on load.
+    -->
+    <script>
+      try {
+        var t = localStorage.getItem('rr-theme')
+        if (t === 'bright') document.documentElement.dataset.theme = t
+      } catch (e) {}
+    </script>
+
+    <!--
       Counterpart to public/404.html's redirect: on GitHub Pages, a deep link
       that 404'd gets bounced here with the real path folded into the query
       string. This restores the actual URL via history.replaceState before
@@ -26,7 +38,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="theme-color" content="#1F2C22" />
+    <meta name="theme-color" content="#0E5F66" />
 
     <title>Roam Ready | Curated Journeys Across India</title>
     <meta

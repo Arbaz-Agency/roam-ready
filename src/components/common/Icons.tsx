@@ -102,6 +102,21 @@ export const Search = ({ className }: P) => (
   </svg>
 )
 
+export const Sun = ({ className }: P) => (
+  <svg {...s(className)}>
+    <circle cx="12" cy="12" r="4.25" />
+    <path d="M12 2.5v3M12 18.5v3M4.2 4.2l2.1 2.1M17.7 17.7l2.1 2.1M2.5 12h3M18.5 12h3M4.2 19.8l2.1-2.1M17.7 6.3l2.1-2.1" />
+  </svg>
+)
+
+/** Warm mode's mark — a single leaf, matching the earthy default palette. */
+export const Leaf = ({ className }: P) => (
+  <svg {...s(className)}>
+    <path d="M5 19c8-.5 13-5.5 14-14-9 1-14 6-14 14Z" />
+    <path d="M6.5 17.5 17 7" />
+  </svg>
+)
+
 export const Sliders = ({ className }: P) => (
   <svg {...s(className)}>
     <path d="M4 7h10M18 7h2M4 17h4M12 17h8" />

@@ -1,35 +1,31 @@
 /**
  * Brand + contact configuration.
  *
- * ⚠️ PLACEHOLDER CONTACT DETAILS — every value marked below is invented for the
- * build and must be replaced with real Roam Ready details before launch.
+ * Contact details are the official Roam Ready details. Hours and social links
+ * are still placeholders.
  */
 export const site = {
   name: 'Roam Ready',
-  tagline: 'Go somewhere worth remembering.',
+  tagline: 'Plan your escape to the mountains.',
   description:
-    'Roam Ready designs curated journeys across the Himalayas, Rajasthan and beyond — mountain escapes, spiritual trails and slow, well-planned travel.',
+    'Roam Ready plans hill, lake and temple tours from Delhi, across Kashmir, Uttarakhand, Himachal and Rajasthan — with vegetarian meals, daylight travel and one contact for your whole trip.',
 
   /** PLACEHOLDER — set to the production domain. */
   url: 'https://roamready.in',
 
   contact: {
-    /** PLACEHOLDER */
-    phoneDisplay: '+91 98765 43210',
-    /** PLACEHOLDER — digits only, country code first, used for wa.me links. */
-    phoneRaw: '919876543210',
-    /** PLACEHOLDER */
-    email: 'hello@roamready.in',
-    /** PLACEHOLDER */
-    addressLines: ['Roam Ready Travel', 'Sector 17, Chandigarh', 'Punjab 160017, India'],
+    phoneDisplay: '+91 99584 46827',
+    /** Digits only, country code first, used for wa.me links. */
+    phoneRaw: '919958446827',
+    email: 'roamready5@gmail.com',
+    addressLines: ['Roam Ready', 'Mandir Marg, Pocket A, Gole Market', 'New Delhi, Delhi 110001'],
     hours: 'Mon – Sat, 10:00 – 19:00 IST',
   },
 
   social: [
     // PLACEHOLDER handles.
-    { label: 'Instagram', href: 'https://instagram.com/' },
-    { label: 'Facebook', href: 'https://facebook.com/' },
-    { label: 'YouTube', href: 'https://youtube.com/' },
+    { label: 'Instagram', href: 'https://www.instagram.com/rr_community' },
+    { label: 'Facebook', href: 'https://www.facebook.com/profile.php?id=61562554374866' },
   ],
 } as const
 
@@ -43,7 +39,6 @@ export const navLinks = [
   { label: 'Home', to: '/' },
   { label: 'About', to: '/about' },
   { label: 'Packages', to: '/packages' },
-  { label: 'Destinations', to: '/destinations' },
   { label: 'Gallery', to: '/gallery' },
   { label: 'Contact', to: '/contact' },
 ] as const

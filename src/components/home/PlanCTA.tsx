@@ -48,8 +48,8 @@ export function PlanCTA() {
           data-reveal
           style={{ '--reveal-delay': '80ms' } as React.CSSProperties}
         >
-          Your next adventure{' '}
-          <span className="accent-italic text-gradient-clay">starts here.</span>
+          Your next trip starts{' '}
+          <span className="accent-italic text-gradient-clay">with one message.</span>
         </h2>
 
         <p
@@ -57,8 +57,8 @@ export function PlanCTA() {
           data-reveal
           style={{ '--reveal-delay': '140ms' } as React.CSSProperties}
         >
-          Tell us where you are going, when, and who with. We will send back an itinerary written
-          for you — usually within a day.
+          Tell us your city, your travel dates and how many of you are going. We will send back an
+          itinerary with a clear price, usually within one working day.
         </p>
 
         <div

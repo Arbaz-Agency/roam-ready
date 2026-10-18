@@ -1,6 +1,5 @@
 import { Link } from 'react-router-dom'
 import { packages } from '../../data/packages'
-import { destinations } from '../../data/destinations'
 import { navLinks, site, whatsappLink } from '../../data/site'
 import { Container } from '../common/Section'
 import { ArrowUpRight, WhatsApp } from '../common/Icons'
@@ -45,26 +44,14 @@ export function Footer() {
         <div className="grid gap-14 lg:grid-cols-[1.4fr_2.6fr]">
           {/* Brand block */}
           <div className="max-w-sm">
-            <Link to="/" className="group flex items-center gap-2.5 text-ivory">
-              <svg viewBox="0 0 24 24" aria-hidden="true" className="h-5 w-5 shrink-0">
-                <circle
-                  cx="12"
-                  cy="12"
-                  r="9.5"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeOpacity="0.35"
-                  strokeWidth="1.3"
-                />
-                <path
-                  d="M16.4 7.6 13.2 13.2 7.6 16.4l3.2-5.6 5.6-3.2Z"
-                  className="fill-clay-light transition-transform duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:rotate-[135deg]"
-                  style={{ transformOrigin: '50% 50%' }}
-                />
-              </svg>
-              <span className="font-display text-[1.0625rem] leading-none tracking-[0.16em]">
-                ROAM READY
-              </span>
+            <Link to="/" className="inline-block">
+              <img
+                src={`${import.meta.env.BASE_URL}roam-ready-logo.png`}
+                alt="Roam Ready"
+                width={1254}
+                height={1254}
+                className="h-44 w-44 rounded-2xl bg-white object-contain p-3"
+              />
             </Link>
             <p className="mt-6 text-[0.9375rem] leading-relaxed text-ivory/65">
               Curated journeys across the Himalayas, Rajasthan and beyond — planned slowly, run
@@ -92,13 +79,6 @@ export function Footer() {
                 label: p.plainName,
                 to: `/packages/${p.slug}`,
               }))}
-            />
-
-            <Column
-              title="Destinations"
-              links={destinations
-                .slice(0, 8)
-                .map((d) => ({ label: d.name, to: `/destinations#${d.slug}` }))}
             />
 
             <div>

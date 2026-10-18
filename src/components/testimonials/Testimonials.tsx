@@ -1,7 +1,11 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { testimonials } from '../../data/testimonials'
 import { cn } from '../../utils/cn'
 import { Container, Section } from '../common/Section'
+import { ArrowRight } from '../common/Icons'
+
+/** How long each review stays on screen before the next one slides in. */
+const INTERVAL_MS = 6000
 
 /**
  * Testimonials.
@@ -13,7 +17,22 @@ import { Container, Section } from '../common/Section'
  */
 export function Testimonials() {
   const [index, setIndex] = useState(0)
+  const [paused, setPaused] = useState(false)
   const active = testimonials[index]
+  const total = testimonials.length
+
+  const next = () => setIndex((i) => (i + 1) % total)
+  const prev = () => setIndex((i) => (i - 1 + total) % total)
+
+  // Advance automatically, one review at a time, through all of them and back
+  // to the start. Holds still while the reader is on the quote or has chosen
+  // one, and never runs for people who have asked the system to reduce motion.
+  useEffect(() => {
+    if (paused) return
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return
+    const id = window.setInterval(() => setIndex((i) => (i + 1) % total), INTERVAL_MS)
+    return () => window.clearInterval(id)
+  }, [paused, total, index])
 
   return (
     <Section tone="shell" size="lg" className="relative overflow-hidden">
@@ -34,8 +53,15 @@ export function Testimonials() {
               &ldquo;
             </span>
 
-            <div className="relative" data-reveal>
-              <p className="eyebrow mb-10">In their words</p>
+            <div
+              className="relative"
+              data-reveal
+              onMouseEnter={() => setPaused(true)}
+              onMouseLeave={() => setPaused(false)}
+              onFocus={() => setPaused(true)}
+              onBlur={() => setPaused(false)}
+            >
+              <p className="eyebrow mb-10">What travellers say</p>
 
               <blockquote>
                 <p
@@ -55,6 +81,39 @@ export function Testimonials() {
                   <span className="text-[0.875rem] text-faint">{active.location}</span>
                 </footer>
               </blockquote>
+
+              {/* Manual controls, with a progress bar that fills over each review. */}
+              <div className="mt-10 flex items-center gap-5">
+                <button
+                  type="button"
+                  onClick={prev}
+                  aria-label="Previous review"
+                  className="grid h-11 w-11 place-items-center rounded-full border border-border-strong text-ink transition-colors duration-300 hover:border-clay hover:text-clay"
+                >
+                  <ArrowRight className="h-4 w-4 rotate-180" />
+                </button>
+                <button
+                  type="button"
+                  onClick={next}
+                  aria-label="Next review"
+                  className="grid h-11 w-11 place-items-center rounded-full border border-border-strong text-ink transition-colors duration-300 hover:border-clay hover:text-clay"
+                >
+                  <ArrowRight className="h-4 w-4" />
+                </button>
+                <p className="text-[0.8125rem] tabular-nums text-muted">
+                  {String(index + 1).padStart(2, '0')} / {String(total).padStart(2, '0')}
+                </p>
+                <div className="relative hidden h-px flex-1 overflow-hidden bg-border-strong sm:block">
+                  <span
+                    key={index}
+                    className="absolute inset-y-0 left-0 w-full origin-left bg-clay motion-reduce:hidden"
+                    style={{
+                      animation: `rr-progress ${INTERVAL_MS}ms linear forwards`,
+                      animationPlayState: paused ? 'paused' : 'running',
+                    }}
+                  />
+                </div>
+              </div>
             </div>
           </div>
 
